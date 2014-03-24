@@ -36,4 +36,16 @@ class Module
             ),
         );
     }
+    
+    public function getServiceConfig()
+    {    
+    	return array(
+    		'factories' => array(
+    			"Application\Controller\Produto"  => function($sm) {
+    				return $sm->get("config");
+				},
+    		)
+    	);
+    					
+    }
 }

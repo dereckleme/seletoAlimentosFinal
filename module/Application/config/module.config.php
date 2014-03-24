@@ -68,7 +68,33 @@ return array(
                         'action'        => 'contato',
                     ),
                 ),					
-			),        		
+			),
+        	'seletoProduto' => array(        			
+        		'type'    => 'Literal',
+        		'options' => array(
+        			'route'    => '/produto',
+        			'defaults' => array(
+        				'__NAMESPACE__' => 'Application\Controller',
+        				'controller'    => 'Produto',
+        				'action'        => 'index',
+        			),
+        		),
+        		'may_terminate' => true,
+        		'child_routes'	 => array(
+        			'seletoProdutoDetalhe' => array(
+        				'type'    => 'Segment',
+        				'options' => array(
+        					'route'    => '[/:pagina]',
+        					'constraints' => array(        						
+        					),
+        					'defaults' => array(
+        						"action" => "page",
+        					),
+        				),
+        			),
+        		),
+        	),
+        		
 			/*'seletoAlimentos' => array(
                 'type'    => 'Literal',
                 'options' => array(
@@ -119,7 +145,7 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
-        	'Application\Controller\Produto' => 'Application\Controller\ProdutoController'
+        	'Application\Controller\Produto' => 'Application\Controller\ProdutoController',        	
         ),
     ),
     'view_manager' => array(

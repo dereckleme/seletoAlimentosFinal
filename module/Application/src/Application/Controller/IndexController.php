@@ -33,19 +33,23 @@ class IndexController extends AbstractActionController
     			$dados = $request->getPost()->toArray();    		
     			
     			switch ($dados['destinatario']){    				
-    				case 1: $to = "sac@grupomex.com.br";
+    				case 1: $to = "jorge.mota@grupomex.com.br";
     				break;
-    				case 2: $to = "sac@grupomex.com.br";
+    				case 2: $to = "lana.medeiros@grupomex.com.br";
     				break;
-    				case 3: $to = "sac@grupomex.com.br";
+    				case 3: $to = "sac@grupomex.com.br"; //$to = "sac.seletoalimentos@grupomex.com.br";
     				break;
-    				case 4: $to = "sac@grupomex.com.br";
+    				case 4: $to = "sonia.binda@grupomex.com.br";
     				break;
+    				case 5: $to = "wilma.compri@grupomex.com.br";
+    				break;
+    				#case 6: $to = "tarsila@spicycomm.com.br";
+    				#break;
     				default: die('Campo Vazio');
     				break;
     			}
     			
-    			/*$view = new ViewModel(array(
+    			$view = new ViewModel(array(
     				'fullname' => $dados['nome'],
     				'fullemail' => $dados['email'],
     				'fullphone' => $dados['phone'],
@@ -54,10 +58,11 @@ class IndexController extends AbstractActionController
     			$view->setTerminal(true);
     			$view->setTemplate('Application/view/emails/contato');
     			$this->mailerZF2()->send(array(
-    					'to' => $to,
+    					'to' => '',
     					'cc' => $dados['email'],
-    					'subject' => 'Isto é um teste'
-    			), $view);*/
+    					'bcc' => 'seletoalimentos@seletoalimentos.com.br,'.$to.' ',
+    					'subject' => 'Contato via [http://www.seletoalimentos.com.br]'
+    			), $view);
     			
     			return $this->redirect()->toRoute('seletoContato');
     		}

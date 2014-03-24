@@ -52,10 +52,12 @@ class Contato extends Form{
 			'options' => array(						
 				'value_options' => array(
 						'' => 'DESTINATÁRIO',
-						'1' => 'ADM',
-						'2' => 'MKT',
+						'1' => 'COMERCIAL',
+						'2' => 'MARKETING',
 						'3' => 'SAC',
-						'4' => 'TRABALHE CONOSCO',
+						'4' => 'COMPRAS',
+						'5' => 'TRABALHE CONOSCO',
+						#'6' => 'TESTE',
 				),
 			),
 			'attributes' => array(

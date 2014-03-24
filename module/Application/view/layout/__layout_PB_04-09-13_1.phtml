@@ -1,0 +1,374 @@
+<?php echo $this->doctype(); ?>
+<html lang="pt-br">
+	<head>
+	<meta charset="utf-8">
+	        <?php echo $this->headTitle('SELETO ALIMENTOS | ' . $this->title)?>
+	
+	        <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0')
+	        							->appendName('robots', $this->robots)
+	        							->appendName('description', $this->descriptions)
+	        							->appendName('keywords', $this->keywords)
+	        							->appendName('author', $this->author)
+	        							->appendName('revisit-after', $this->revisit) ?>
+	
+	        <!-- Le styles -->
+	        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/ico', 'href' => $this->basePath () . '/img/favicon.ico'))
+	        				->prependStylesheet($this->basePath().'/css/style-ie.css', 'screen', 'IE')
+	        				->prependStylesheet($this->basePath ().'/css/jquery.scrollTop.css')
+	        				->prependStylesheet($this->basePath ().'/css/style.css') ?>
+	
+	        <!-- Scripts -->
+	        <?php echo $this->headScript()->prependFile($this->basePath().'/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9'))
+	        							  ->prependFile($this->basePath().'/js/site.js')
+	        							  ->prependFile($this->basePath().'/js/jquery.scrollTop.js')
+	        							  ->prependFile($this->basePath ().'/js/jquery.min.js') ?>
+	        <!--[if !IE]><!-->
+			<script>
+	        	if (/*@cc_on!@*/false) {
+	            	document.documentElement.className+='ie10';
+	        	}
+	        	</script>
+			<!--<![endif]-->
+	</head>
+	<body>
+		<div id="geral">
+			<div id="header">
+				<div id="menu">
+					<ul class="mn_esq">
+						<li><a href="" title="Em Breve" class="compreAqui" target="_blank">COMPRE AQUI</a></li>
+						<li><a href="<?php echo $this->url('seletoDom') ?>" title="Conheça Seleto Dom">CONHEÇA SELETO DOM</a></li>
+					</ul>
+					<h1>
+						<a href="<?php echo $this->url('home'); ?>" class="logoSeleto">
+							Café Seleto - Grãos especiais. Sabor delicioso.
+						</a>
+					</h1>
+					<ul class="mn_dir">
+						<li><a href="<?php echo $this->url('seletoEmpresa') ?>" title="Nossa Empresa">NOSSA EMPRESA</a></li>
+						<li><a href="<?php echo $this->url('seletoContato') ?>" title="Fale Conosco">FALE CONOSCO</a></li>
+					</ul>
+				</div>
+			</div>
+	
+			<div id="content">
+				<div id="contentTopo">
+					<ul class="status_produtos">
+						<li class="status_produtos"><a href="" class="btn_produtos" title="Nossos Produtos">NOSSOS PRODUTOS</a></li>
+					</ul>
+	
+					<ul class="status_redesSociais">
+						<li><a href="#" class="nossaMusica" title="Música Seleto">Música</a></li>
+						<li><a href="https://www.facebook.com/SeletoAlimentos?ref=ts&fref=ts" class="facebook" title="facebook" target="_blank">Facebook</a></li>
+						<li><a href="https://twitter.com/seletoalimentos" class="twitter" title="twitter" target="_blank">Twitter</a></li>
+						<li><a href="http://instagram.com/cafeseleto" class="instagran" title="instagran" target="_blank">Instagran</a></li>
+					</ul>
+	
+					<ul class="download_musica" style="display: none">
+						<li class="player">
+							<audio id="musica">
+								<source src="<?php echo $this->basepath('musica/musica.mp3') ?>" type="audio/mp3" />
+							</audio> 
+							<a href="#" class="playMusica">
+								<img src="<?php echo $this->basepath('img/play_pause.png') ?>">
+							</a> 
+							<a href="#" class="stopMusica">Stop</a>
+						</li>
+	
+						<li class="download">
+							<div id="downloadSeleto">
+								<a href="#" class="baixeMusica"><br />Baixe a música</a><br />
+								<div style="display: none" class="monstrarDownloads">
+									<a href="<?php echo $this->basepath('musica/diaDasMaes.zip') ?>" target="_blank" class="musica">DIA DAS MÃES</a>
+									<br /> <a href="<?php echo $this->basepath('musica/original60.zip') ?>" target="_blank" class="musica">SELETO ORIGINAL</a>
+									<br /> <a href="<?php echo $this->basepath('musica/60classico.zip') ?>" target="_blank" class="musica">SELETO CLÁSSICO</a>
+									<br /> <a href="<?php echo $this->basepath('musica/seletosertanejo.zip') ?>" target="_blank" class="musica">SELETO SERTANEJO</a>
+								</div>
+							</div>
+						</li>
+					</ul>
+					
+					<div style="display: none" id="produtos">
+						<div id="header_produtos">
+							<p class="titulo_produtos">conheça nossos produtos<p>					
+						</div>
+	
+						<div id="slider_produtos_geral">
+	
+							<div id="menu_slider">
+								<a class="txt_cafe" href="#">nossos cafés</a> <a class="txt_alimentos" href="#">nossos alimentos</a>
+	
+								<div id="menu_slider_overflow">
+									<div id="overflow">
+										<div id="risca">
+											<img class="detalhe_slider" src="<?php echo $this->basepath(); ?>/img/detalhe_slider.png" style="left: 140px;">
+										</div>
+									</div>
+								</div>
+							</div>
+	
+							<div id="seta_esquerda">
+								<a href="#" class="nextDireita"><img class="seta_slider" src="<?php echo $this->basepath(); ?>/img/seta_esquerda.png"></a>
+							</div>
+							<div id="seta_direita">
+								<a href="#" class="nextEsquerda"><img class="seta_slider" src="<?php echo $this->basepath(); ?>/img/seta_direita.png"> </a>
+							</div>
+	
+							<nav id="slide">
+								<ul class="nossos_cafes" style="left: -960px">
+									<li class="cafe">
+										<div id="itens">
+											<a href=""></a><br />
+										</div>
+										<div id="itens" style="text-align: center;">
+											<a href="<?php echo $this->url('seletoProduto');?>/cafe-filtro-102-seleto"><img class="img_itens" src="<?php echo $this->basepath(); ?>/img/cafes/filtro_102.png"></a>
+											<br/> filtro
+											<br />102
+											<br />
+											<span class="caixaBaixa" style="text-transform: none;"></span>
+											<span class="caixaBaixa" style="text-transform: none;"></span>
+										</div>
+	
+										<div id="itens" style="text-align: center;">
+											<a href="<?php echo $this->url('seletoProduto');?>/cafe-filtro-103-seleto"><img class="img_itens" src="<?php echo $this->basepath(); ?>/img/cafes/filtro_103.png"></a>
+											<br/> filtro
+											<br /> 103 
+											<br />
+											<span class="caixaBaixa" style="text-transform: none;"></span>
+											<span class="caixaBaixa" style="text-transform: none;"></span>
+										</div>
+										<div id="itens">
+											<a href=""></a><br/>
+										</div>
+									</li>
+	
+									<li class="cafe">
+										<div id="itens">
+											<a href=""></a><br/>
+											<!--Vacuo 250<span class="caixaBaixa" style="text-transform:none;">g</span> <strong>tradicional</strong> -->
+										</div>
+										<div id="itens">
+											<a href="<?php echo $this->url('seletoProduto');?>/cafe-a-vacuo-tradicional-seleto"><img class="img_itens" src="<?php echo $this->basepath(); ?>/img/cafes/pack-vacuo-500-tradicional.png"></a>
+											<br/>Vácuo Tradicional
+											<br />250<span class="caixaBaixa" style="text-transform: none;">g</span> e 500
+											<span class="caixaBaixa" style="text-transform: none;">g</span>
+										</div>
+
+										<div id="itens" style="text-align: center;">
+											<a href="<?php echo $this->url('seletoProduto');?>/cafe-a-vacuo-forte-seleto"><img class="img_itens" src="<?php echo $this->basepath(); ?>/img/cafes/pack-vacuo-500-forte.png"></a>
+											<br/> Vácuo forte 
+											<br /> 250<span class="caixaBaixa" style="text-transform: none;">g</span> e 500
+											<span class="caixaBaixa" style="text-transform: none;">g</span>
+										</div>
+										<div id="itens">
+											<a href=""></a><br/>
+											<!--Vacuo 500<span class="caixaBaixa" style="text-transform:none;">g</span> <br/> <strong>forte</strong>-->
+										</div>
+									</li>
+	
+									<li class="cafe">
+										<div id="itens">
+											<a href=""></a><br/>
+										</div>
+	
+										<div id="itens">
+											<a href="<?php echo $this->url('seletoProduto');?>/cafe-almofada-tradicional-seleto"><img class="img_itens" src="<?php echo $this->basepath(); ?>/img/cafes/almofada-tradicional-500.png"> </a> 
+											<br /> Almofada Tradicional 
+											<br /> 250 <span class="caixaBaixa" style="text-transform: none;">g</span> e 500
+											<span class="caixaBaixa" style="text-transform: none;">g</span>
+										</div>
+										<div id="itens">
+											<a href="<?php echo $this->url('seletoProduto');?>/cafe-almofada-forte-seleto"><img class="img_itens" src="<?php echo $this->basepath(); ?>/img/cafes/almofada-forte-250.png"></a>
+											<br/>Almofada
+											<br /> Forte
+											<br />250<span class="caixaBaixa" style="text-transform: none;">g</span> e 500
+											<span class="caixaBaixa" style="text-transform: none;">g</span>
+										</div>
+	
+										<div id="itens">
+											<a href=""></a><br/>
+										</div>
+									</li>
+	
+									<li class="cafe">
+										<div id="itens">
+											<a href=""></a><br/>
+										</div>
+	
+										<div id="itens">
+											<a href="<?php echo $this->url('seletoProduto');?>/cafe-dom-levissimo-seleto"><img class="img_itens" src="<?php echo $this->basepath(); ?>/img/cafes/dom-levissimo.png"></a>
+											<br/> Levíssimo
+										</div>
+										<div id="itens">
+											<a href="<?php echo $this->url('seletoProduto');?>/cafe-dom-intenso-seleto"><img class="img_itens" src="<?php echo $this->basepath(); ?>/img/cafes/dom-intenso.png"></a>
+											<br/> Intenso
+										</div>
+									</li>
+									
+									<li class="cafe">
+										<div id="itens">
+											<a href=""></a><br/>
+										</div>
+	
+										<div id="itens" style="text-align: center;">
+											<a href="<?php echo $this->url('seletoProduto');?>/cafe-gourmet-seleto"><img class="img_itens" src="<?php echo $this->basepath(); ?>/img/cafes/gourmet.png"></a>
+											<br/>café expresso 
+											<br />gourmet
+											<br />1k<span class="caixaBaixa" style="text-transform: none;">g</span>
+											<span class="caixaBaixa" style="text-transform: none;"></span>
+										</div>
+	
+										<div id="itens" style="text-align: center;">
+											<a href="<?php echo $this->url('seletoProduto');?>/cafe-stand-up-forte-seleto"><img class="img_itens" src="<?php echo $this->basepath(); ?>/img/cafes/stand-up.png"></a>
+											<br/>café forte
+											<br /> stand up 
+											<br /> 500<span class="caixaBaixa" style="text-transform: none;">g</span>
+											<span class="caixaBaixa" style="text-transform: none;"></span>
+										</div>
+	
+										<div id="itens">
+											<a href=""></a><br/>
+										</div>
+									</li>
+								</ul>
+	
+								<ul class="nossos_alimentos" style="display: none; left: -960px">
+									
+									<li class="alimentos">
+
+										<!--<div id="itens">
+											<img class="img_itens" src=""><br/>
+										</div>-->
+	
+										<div id="itens" style="margin-left:360px;">
+											<a href="<?php echo $this->url('seletoProduto');?>/preparo-de-morango-alimento-seleto"><img class="img_itens" src="<?php echo $this->basepath(); ?>/img/cafes/preparomorango.png"></a>
+											<br/> Preparo de
+											<br />Morango em pó
+											<br />400<span class="caixaBaixa" style="text-transform: none;">g</span>
+											<span class="caixaBaixa" style="text-transform: none;"></span>
+										</div>
+	
+										<!--<div id="itens">
+											<img class="img_itens" src=""><br/>
+										</div>-->
+
+									</li>
+
+	
+									<li class="alimentos">
+										<div id="itens">
+											<img class="img_itens" src=""><br/>
+										</div>
+	
+										<div id="itens">
+											<a href="<?php echo $this->url('seletoProduto');?>/mistura-de-bolo-chocolate-alimento-seleto"><img class="img_itens" src="<?php echo $this->basepath(); ?>/img/cafes/bolo_choc.png"></a>
+											<br/>Mistura para bolo
+											<br />chocolate
+											<br />400<span class="caixaBaixa" style="text-transform: none;">g</span>
+											<span class="caixaBaixa" style="text-transform: none;"></span>
+										</div>
+	
+										<div id="itens">
+											<a href="<?php echo $this->url('seletoProduto');?>/mistura-de-bolo-milho-cremoso-alimento-seleto"><img class="img_itens" src="<?php echo $this->basepath(); ?>/img/cafes/bolo_milho.png"></a>
+											<br/>Mistura para bolo<br />milho cremoso
+											<br />400<span class="caixaBaixa" style="text-transform: none;">g</span>
+											<span class="caixaBaixa" style="text-transform: none;"></span>
+										</div>
+	
+										<div id="itens">
+											<img class="img_itens" src=""><br/>
+										</div>
+									</li>
+
+	
+									<li class="alimentos">
+										<div id="itens">
+											<img class="img_itens" src=""><br/>
+										</div>
+	
+										<div id="itens">
+											<a href="<?php echo $this->url('seletoProduto');?>/mistura-de-bolo-coco-alimento-seleto"><img class="img_itens" src="<?php echo $this->basepath(); ?>/img/cafes/bolo_coco.png"></a>
+											<br/>Mistura para bolo
+											<br />coco
+											<br />400<span class="caixaBaixa" style="text-transform: none;">g</span>
+											<span class="caixaBaixa" style="text-transform: none;"></span>
+										</div>
+	
+										<div id="itens">
+											<a href="<?php echo $this->url('seletoProduto');?>/mistura-de-bolo-laranja-alimento-seleto"><img class="img_itens" src="<?php echo $this->basepath(); ?>/img/cafes/bolo_laranja.png"><br/></a>
+											Mistura para bolo
+											<br />laranja
+											<br />400<span class="caixaBaixa" style="text-transform: none;">g</span>
+											<span class="caixaBaixa" style="text-transform: none;"></span>
+										</div>
+	
+										<div id="itens">
+											<img class="img_itens" src=""><br/>
+										</div>
+									</li>
+
+									<li class="alimentos">
+										<div id="itens">
+											<img class="img_itens" src=""><br/>
+										</div>
+	
+										<div id="itens">
+											<a href="<?php echo $this->url('seletoProduto');?>/achocolatado-sache-alimento-seleto"><img class="img_itens" src="<?php echo $this->basepath(); ?>/img/cafes/preparochocolate.png"></a>
+											<br/> Achocolatado instantâneo
+											<br />sache 400<span class="caixaBaixa" style="text-transform: none;">g</span>
+											<span class="caixaBaixa" style="text-transform: none;"></span>
+										</div>
+	
+										<div id="itens">
+											<a href="<?php echo $this->url('seletoProduto');?>/achocolatado-pote-alimento-seleto"><img class="img_itens" src="<?php echo $this->basepath(); ?>/img/cafes/preparochocolate_pote.png"></a>
+											<br/> Achocolatado instantâneo
+											<br />pote 400 <span class="caixaBaixa" style="text-transform: none;">g</span>
+											<span class="caixaBaixa" style="text-transform: none;"></span>
+										</div>
+										<div id="itens">
+											<img class="img_itens" src=""><br/>
+										</div>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<!-- conteudo -->
+				<?php echo $this->content; ?>
+			</div>
+	
+			<div id="footer">
+				<div id="menu_footer">
+					<ul class="mn_footer">
+						<li>CAFÉ SELETO COPYRIGHT &copy 2013</li>
+						<li>TODOS OS DIREITOS RESERVADOS</li>
+						<li><a href="<?php echo $this->url('seletoPolitica') ?>">POLÍTICA DE PRIVACIDADE</a></li>
+						<li><a href="http://www.spicyweb.com.br" target="_blank"><img src="<?php echo $this->basepath('img/logo_spicy.png') ?>" alt="Spicy Web" /></a></li>
+					</ul>
+				</div>
+
+				<div id="popup_home" class="popup_mob" style="display: none">
+
+		  	     <div id="close" class="closed" title="FECHAR"></div>
+
+				  	<img src="<?php echo $this->basepath('img/lojaSeleto_emBreve.png') ?>"/>
+		          
+		          </div>
+
+			    </div>
+
+
+		</div>
+		
+		<a href='#' id='toTop'><img src="<?php echo $this->basepath(); ?>/img/icon-to-top.png" title="VOLTAR AO TOPO" alt="VOLTAR AO TOPO" ></a>
+		
+		<script>
+	  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  		ga('create', 'UA-42965119-1', 'seletoalimentos.com.br');		
+	  		ga('send', 'pageview');
+		</script>
+	</body>
+</html>
