@@ -33,15 +33,15 @@ class IndexController extends AbstractActionController
     			$dados = $request->getPost()->toArray();    		
     			
     			switch ($dados['destinatario']){    				
-    				case 1: $to = "jorge.mota@grupomex.com.br";
+    				case 1: $to = "jorge.mota@seletoalimentos.com.br";
     				break;
-    				case 2: $to = "lana.medeiros@grupomex.com.br";
+    				case 2: $to = "lana.medeiros@seletoalimentos.com.br ";
     				break;
-    				case 3: $to = "sac@grupomex.com.br"; //$to = "sac.seletoalimentos@grupomex.com.br";
+    				case 3: $to = "sac@seletoalimentos.com.br"; //$to = "sac.seletoalimentos@grupomex.com.br";
     				break;
-    				case 4: $to = "sonia.binda@grupomex.com.br";
+    				case 4: $to = "sonia.binda@seletoalimentos.com.br";
     				break;
-    				case 5: $to = "wilma.compri@grupomex.com.br";
+    				case 5: $to = "wilma.compri@seletoalimentos.com.br";
     				break;
     				#case 6: $to = "tarsila@spicycomm.com.br";
     				#break;
